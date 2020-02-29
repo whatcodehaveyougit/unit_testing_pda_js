@@ -66,8 +66,13 @@ Calculator.prototype.operatorClick = function(operator){
   // replace the previous total with the current running total and flag that a
   // new total has been calculated
 
+  if (this.runningTotal == Infinity ){
+    this.runningTotal = "Error";
+  }
+
   this.previousTotal = this.runningTotal;
   this.newTotal = true;
+
 }
 
 Calculator.prototype.clearClick = function(){

@@ -62,6 +62,16 @@ describe('calculator functionality', function() {
       expect(running_total.getAttribute('value')).to.eventually.equal('400000000')
   })
 
+  it('should return error when divided a number by 0', function(){
+    element(by.css('#number9')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number0')).click();
+    element(by.css('#operator_equals')).click();
+    running_total = element(by.css('#running_total'))
+      expect(running_total.getAttribute('value')).to.eventually.equal('Error')
+  })
+
+
 
 
 
