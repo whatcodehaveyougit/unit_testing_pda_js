@@ -16,4 +16,9 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('2')
   })
 
+  it('number buttons should update the display of the running total', function(){
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number2')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('2')
+  })
 });
