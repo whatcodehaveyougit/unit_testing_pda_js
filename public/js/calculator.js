@@ -33,7 +33,6 @@ Calculator.prototype.numberClick = function(number){
   }
   // concatenate the clicked number to the running total
   this.runningTotal = parseFloat('' + this.runningTotal + number);
-
 }
 
 Calculator.prototype.operatorClick = function(operator){
