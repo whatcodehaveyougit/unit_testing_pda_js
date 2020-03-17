@@ -38,39 +38,27 @@ describe('calculator', function () {
   })
 
   it('divide 21 by 7 to get 3', function(){
-    calculator.numberClick(21);
+    calculator.numberClick(2);
+    calculator.numberClick(1);
     calculator.operatorClick("/");
     calculator.numberClick(7);
     calculator.operatorClick("=");
     assert.equal(3, calculator.previousTotal)
   })
+//
+//   calculator.numberClick() - concatenate multiple number button clicks
+// calculator.operatorClick() - chain multiple operations together
 
-  it('should concatanate multiple number clicks', function(){
-    calculator.numberClick(21);
-    calculator.numberClick(21);
-    calculator.numberClick(4);
-    assert.equal(21214, calculator.runningTotal)
-  })
-
-
-    it('should chain muliple operations together', function(){
-      calculator.numberClick(21);
-      calculator.operatorClick("-");
-      calculator.numberClick(21);
-      calculator.operatorClick("+");
-      calculator.numberClick(4);
-      calculator.operatorClick("=");
-      assert.equal(4, calculator.previousTotal)
-    })
 
     it('should clear running total without affecting calculation', function(){
-      calculator.numberClick(21);
-      calculator.clearClick();
-      calculator.numberClick(21);
+      calculator.numberClick(2);
+      calculator.operatorClick("+");
+      calculator.numberClick(2);
       calculator.operatorClick("+");
       calculator.numberClick(4);
+      calculator.clearClick()
       calculator.operatorClick("=");
-      assert.equal(25, calculator.previousTotal)
+      assert.equal(4, calculator.previousTotal)
     })
 
 
